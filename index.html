@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,6 +26,8 @@ section{padding:46px 0;scroll-margin-top:170px}.hero{display:grid;grid-template-
 @media(max-width:480px){.achievement-grid{grid-template-columns:1fr}.stat{padding:16px}.stat strong{font-size:1.5rem}.hero-copy{padding:24px}.header-tools{width:100%;justify-content:flex-end}.gallery-stage img{height:320px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 @media print{header,.actions,.filters,.filter-label,#gallery,#comments,footer,.btn,.cv-actions{display:none!important}body{background:white;color:#111}.hero-copy,.hero-art,.panel,.stat,.achievement,.year{background:white;color:#111;box-shadow:none;border-color:#aaa;break-inside:avoid}.lead,.muted,.sub,.achievement p,.year li span,.art-caption{color:#333}.position,.tag,.eyebrow,.stat strong,.year h3,h1 span{color:#765818}.hero{padding-top:0}.achievement-grid{grid-template-columns:repeat(2,1fr)}section{padding:20px 0}.hero-art{min-height:300px}.prize-photo-frame{min-height:250px}}
+
+.year .journey-results{padding-left:26px;margin:0}.journey-results li{padding:12px 0 12px 8px;border-bottom:1px solid var(--line)}.journey-results li:last-child{border-bottom:0}.journey-results li::marker{color:var(--accent);font-weight:700}
 </style>
 </head>
 <body>
@@ -544,26 +546,114 @@ function render(){
 }
 document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.category;render();}));
 document.querySelectorAll('[data-subject]').forEach(b=>b.addEventListener('click',()=>{subject=b.dataset.subject;render();}));
-/* Timeline retains unknown dates without assigning invented years. */
-const years=[...new Set(competitions.filter(c=>c.year).map(c=>c.year))].sort((a,b)=>a-b);
-function timelineEntry(c){return `<li>
-<strong>${esc(c.name)}</strong>
-<span>${esc(c.result)} · ${esc(c.category)}${c.school?' · '+esc(c.school):''}</span>
-</li>`;}
-document.getElementById('achievementTimeline').innerHTML=years.map(year=>`<article class="year">
-<h3>${year}</h3>${year===2019?'<p>My competition journey begins.</p>':''}${year===2026?'<p>140+ competitions and my first personal website.</p>':''}<ul>${competitions.filter(c=>c.year===year).map(timelineEntry).join('')}</ul>
-</article>`).join('')+`<article class="year">
-<h3>Year not provided</h3>
-<ul>${competitions.filter(c=>!c.year).map(timelineEntry).join('')}</ul>
-</article>
-<article class="year">
-<h3>2019–2026</h3>
-<p>Seven years of competitions, experiences, and learning.</p>
-</article>
-<article class="year">
-<h3>Looking ahead</h3>
-<p>National stages, new challenges, and studying abroad.</p>
-</article>`;
+/* My Journey: user-supplied competition names and remembered results.
+   These year groups are independent of the competition showcase records. */
+const journeyAchievements = {
+  "2025": [
+    {
+      "name": "Youthsphere Science Fusion",
+      "result": "3-Segment Winner"
+    },
+    {
+      "name": "BDOC Mathematics Olympiad",
+      "result": "Finalist"
+    },
+    {
+      "name": "National Biology Carnival — Season 2 (Zoology)",
+      "result": "Champion / 1st Place"
+    },
+    {
+      "name": "International Youth Math Challenge (IYMC)",
+      "result": "Pre-finalist"
+    },
+    {
+      "name": "INKCO",
+      "result": "Finalist"
+    },
+    {
+      "name": "ISOC 10",
+      "result": "Finalist"
+    },
+    {
+      "name": "Bijoy Ullash GK",
+      "result": "14th Place"
+    }
+  ],
+  "2026": [
+    {
+      "name": "Bangladesh Mathematics Olympiad (BdMO) — Dhaka Regionals",
+      "result": "Selected for regional round"
+    },
+    {
+      "name": "BDOC Chemistry Olympiad 2025",
+      "result": "Finalist"
+    },
+    {
+      "name": "Mekviora Apex STEM Mathematics",
+      "result": "Finalist"
+    },
+    {
+      "name": "Mekviora Apex STEM Science",
+      "result": "Finalist"
+    },
+    {
+      "name": "Crest Special Competition",
+      "result": "1st Place"
+    },
+    {
+      "name": "Quiz Crown Bangladesh 2026 — GK",
+      "result": "Winner"
+    },
+    {
+      "name": "Topper Hunt SSC 2026",
+      "result": "Finalist, Rank 101"
+    },
+    {
+      "name": "UASC GK & IQ",
+      "result": "Rank 10"
+    },
+    {
+      "name": "BDOAA E-Regional",
+      "result": "Winner"
+    },
+    {
+      "name": "BDOAA IQ Quiz",
+      "result": "1st Place"
+    },
+    {
+      "name": "BDOAA Physics Quiz",
+      "result": "9th Place"
+    },
+    {
+      "name": "Saint Gregory's Science Festival 2026",
+      "result": "2nd Place"
+    },
+    {
+      "name": "Dhaka College Online Spring Summit",
+      "result": "2nd Place"
+    },
+    {
+      "name": "Dhaka City College Cyberspace Mania Quiz 2026",
+      "result": "1st Place"
+    },
+    {
+      "name": "Notre Dame College National ICT Festival 2026",
+      "result": "12th nationally"
+    },
+    {
+      "name": "Clarion Call Math Olympiad 2026",
+      "result": "28th position"
+    }
+  ]
+};
+const years=[...new Set([...competitions.filter(c=>c.year).map(c=>c.year),...Object.keys(journeyAchievements).map(Number)])].sort((a,b)=>a-b);
+function timelineEntry(c){return `<li><strong>${esc(c.name)}</strong><span>${esc(c.result)}${c.category?' · '+esc(c.category):''}${c.school?' · '+esc(c.school):''}</span></li>`;}
+function journeyYear(year){
+  if(journeyAchievements[year])return `<article class="year"><h3>${year} — Competition achievements</h3><ol class="journey-results">${journeyAchievements[year].map(timelineEntry).join('')}</ol></article>`;
+  return `<article class="year"><h3>${year}</h3>${year===2019?'<p>My competition journey begins.</p>':''}<ul>${competitions.filter(c=>c.year===year).map(timelineEntry).join('')}</ul></article>`;
+}
+document.getElementById('achievementTimeline').innerHTML=years.map(journeyYear).join('')+`<article class="year"><h3>Year not provided</h3><ul>${competitions.filter(c=>!c.year).map(timelineEntry).join('')}</ul></article><article class="year"><h3>2019–2026</h3><p>Seven years of competitions, experiences, and learning.</p></article><article class="year"><h3>Looking ahead</h3><p>National stages, new challenges, and studying abroad.</p></article>`;
+
 /* Accessible gallery: no autoplay; buttons, indicators, and arrow keys. */
 let galleryIndex=0;
 const gallery=document.getElementById('photoGallery'),galleryImage=document.getElementById('galleryImage');
