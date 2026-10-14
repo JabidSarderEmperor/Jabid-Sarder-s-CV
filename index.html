@@ -182,7 +182,221 @@
 
   
 .school{color:#78dcca;font-weight:650}.position{color:#f3c969;font-weight:800;font-size:1.15rem}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.filters button[aria-pressed="true"]{background:#4da3ff;color:#07111f}.achievement small{color:var(--muted)}.dream{font-size:1.2rem;max-width:850px}.language-grid,.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}.photo-slot{min-height:200px;display:grid;place-content:center;text-align:center;border:1px dashed #355675;border-radius:15px;color:var(--muted);padding:20px}.photo-slot img{width:100%;border-radius:12px}.utterances{max-width:100%}.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:4px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.filters,#comments{display:none!important}.achievement-grid{grid-template-columns:repeat(2,1fr)}.achievement,.panel{break-inside:avoid}.school{color:#126354}.position{color:#805600}}
-#commentForm{display:grid;gap:10px;max-width:720px}#commentForm input,#commentForm textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#081626;color:var(--text);font:inherit}#commentForm textarea{resize:vertical}#commentForm button{justify-self:start}#commentList article{margin-top:16px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}#commentList p{white-space:pre-wrap;overflow-wrap:anywhere}#commentList time{display:block;color:var(--muted);font-size:.85rem}#commentForm textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}</style></head><body><header><nav class="container"><a class="brand" href="#home">JS <span>·</span> Abu Jabid Sarder</a><div class="navlinks"><a href="#about">About</a><a href="#achievements">Competitions</a><a href="#journey">Journey</a><a href="#dreams">My Dreams</a><a href="#languages">Languages</a><a href="#gallery">Gallery</a><a href="#comments">Comments</a></div></nav></header><main class="container"><section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">Student · Competitor · Lifelong learner</div><h1>Abu Jabid <span>Sarder</span></h1><p class="lead">Seven years of curiosity, competition, and growth. Welcome to my very first website—a place to share my achievements, experiences, and the journey ahead.</p><div class="actions"><a class="btn primary" href="#achievements">Explore my competitions ↓</a><button class="btn" onclick="window.print()">Print / Save as PDF</button></div></div><div class="hero-art"><div class="eyebrow">My journey · Since 2019</div><div class="monogram">JS</div><p class="art-caption">Keep learning. Keep competing. Keep growing.</p></div></section><div class="stats"><div class="stat"><strong>140+</strong>Competitions participated in</div><div class="stat"><strong>7 years</strong>Competing since 2019 · as of 2026</div><div class="stat"><strong>21</strong>Local Olympiad wins</div><div class="stat"><strong>4</strong>Competition categories</div></div><section id="about"><div class="section-head"><div><h2>About me</h2><p class="sub"></p></div></div><div class="panel"><p>I am Abu Jabid Sarder. I am 18 years old and I am from Bangladesh. This is my very first website, where I share the competitions I have participated in, my wins, my experiences, and the journey of my life.</p></div></section><section id="achievements"><div class="section-head"><div><h2>My competition showcase</h2><p class="sub">Explore placements, wins, and participation across four categories.</p></div></div><div class="filters" role="group" aria-label="Competition category"><button class="btn" data-category="All" aria-pressed="true">All</button><button class="btn" data-category="Institutional" aria-pressed="false">Institutional</button><button class="btn" data-category="Local" aria-pressed="false">Local</button><button class="btn" data-category="National" aria-pressed="false">National</button><button class="btn" data-category="International" aria-pressed="false">International</button></div><p id="categorySummary" class="muted" aria-live="polite"></p><div class="achievement-grid" id="competitionCards"></div></section><section id="journey"><div class="section-head"><div><h2>My journey</h2><p class="sub"></p></div></div><div class="timeline"><div class="year"><strong>2019</strong><p>My competition journey begins.</p></div><div class="year"><strong>2019–2026</strong><p>Seven years of competitions, experiences, and learning.</p></div><div class="year"><strong>2026</strong><p>140+ competitions and my first personal website.</p></div><div class="year"><strong>Looking ahead</strong><p>National stages, new challenges, and studying abroad.</p></div></div></section><section id="dreams"><div class="section-head"><div><h2>My Dreams</h2><p class="sub"></p></div></div><div class="panel"><p class="dream">My dream is to have a wonderful life, participate in all the national Olympiads, represent myself on the national stage, build a successful future, and study abroad.</p></div></section><section id="languages"><div class="section-head"><div><h2>Languages I am learning</h2><p class="sub"></p></div></div><div class="language-grid"><div class="stat"><h3>Spanish</h3><strong>A2</strong></div><div class="stat"><h3>Italian</h3><strong>A1</strong></div><div class="stat"><h3>German</h3><strong>A1</strong></div><div class="stat"><h3>French</h3><strong>Learning</strong></div><div class="stat"><h3>Portuguese</h3><strong>A1</strong></div></div></section><section id="gallery"><div class="section-head"><div><h2>Prizes, certificates & memories</h2><p class="sub">A space for photos of my awards and the moments behind them.</p></div></div><div class="photo-grid" id="photoGallery"></div></section><section id="cv"><div class="section-head"><div><h2>My profile</h2><p class="sub"></p></div></div><div class="panel cv-box"><div><h3>Abu Jabid Sarder</h3><p>18 years old · Bangladesh<br>Competition journey since 2019 · 140+ competitions</p></div><button class="btn primary" onclick="window.print()">Print / Save as PDF</button></div></section><section id="comments"><div class="section-head"><div><h2>Leave your thoughts</h2><p class="sub"></p></div></div><div class="panel"><p>Thank you for exploring my journey. Leave an encouraging message, a question, or your thoughts—I’d love to reply.</p><div id="commentsMount"><form id="commentForm"><label for="commentName">Your name</label><input id="commentName" name="name" maxlength="80" required autocomplete="name"><label for="commentMessage">Your comment</label><textarea id="commentMessage" name="message" maxlength="2000" rows="4" required></textarea><button class="btn primary" type="submit">Post comment</button><p id="commentStatus" class="muted" role="status"></p></form><p class="muted">Comments are saved on this browser and device. They are not shared with other visitors.</p><div id="commentList" aria-live="polite"></div></div></div></section></main><footer><div class="container footer-inner"><span>© <span id="currentYear"></span> Abu Jabid Sarder</span><a href="#home">Back to top ↑</a></div></footer><script>
+#commentForm{display:grid;gap:10px;max-width:720px}#commentForm input,#commentForm textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#081626;color:var(--text);font:inherit}#commentForm textarea{resize:vertical}#commentForm button{justify-self:start}#commentList article{margin-top:16px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}#commentList p{white-space:pre-wrap;overflow-wrap:anywhere}#commentList time{display:block;color:var(--muted);font-size:.85rem}#commentForm textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.prize-photo-area{min-height:520px;padding:22px;gap:16px}.prize-photo-frame{position:relative;flex:1;min-height:400px;border:1px dashed #4b7295;border-radius:14px;overflow:hidden;background:#07111f80;display:grid;place-items:center}.prize-photo-frame img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}.prize-photo-frame img[hidden]{display:none}#prizePhotoPlaceholder{text-align:center;padding:30px;color:var(--muted)}#prizePhotoPlaceholder span{font-size:4rem}#prizePhotoPlaceholder h2{color:var(--text);font-size:1.5rem}#prizePhotoPlaceholder p{max-width:260px;margin:12px auto}@media(max-width:850px){.prize-photo-area{min-height:460px}.prize-photo-frame{min-height:350px}}@media(max-width:520px){.prize-photo-area{min-height:410px}.prize-photo-frame{min-height:300px}}</style></head><body><header><nav class="container"><a class="brand" href="#home">JS <span>·</span> Abu Jabid Sarder</a><div class="navlinks"><a href="#about">About</a><a href="#achievements">Competitions</a><a href="#journey">Journey</a><a href="#dreams">My Dreams</a><a href="#languages">Languages</a><a href="#gallery">Gallery</a><a href="#comments">Comments</a></div></nav></header><main class="container"><section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">Student · Competitor · Lifelong learner</div><h1>Abu Jabid <span>Sarder</span></h1><p class="lead">Seven years of curiosity, competition, and growth. Welcome to my very first website—a place to share my achievements, experiences, and the journey ahead.</p><div class="actions"><a class="btn primary" href="#achievements">Explore my competitions ↓</a><button class="btn" onclick="window.print()">Print / Save as PDF</button></div></div><div class="hero-art prize-photo-area"><div class="eyebrow">My proudest moments</div><div class="prize-photo-frame"><img id="prizePhoto" alt="Abu Jabid Sarder holding his prize" hidden><div id="prizePhotoPlaceholder"><span aria-hidden="true">🏆</span><h2>My prize-winning moment</h2><p>My photo holding a prize will appear here.</p></div></div><p class="art-caption">Keep learning. Keep competing. Keep growing.</p></div></section><div class="stats"><div class="stat"><strong>140+</strong>Competitions participated in</div><div class="stat"><strong>7 years</strong>Competing since 2019 · as of 2026</div><div class="stat"><strong>21</strong>Local Olympiad wins</div><div class="stat"><strong>4</strong>Competition categories</div></div><section id="about"><div class="section-head"><div><h2>About me</h2><p class="sub"></p></div></div><div class="panel"><p>I am Abu Jabid Sarder. I am 18 years old and I am from Bangladesh. This is my very first website, where I share the competitions I have participated in, my wins, my experiences, and the journey of my life.</p></div></section><section id="achievements"><div class="section-head"><div><h2>My competition showcase</h2><p class="sub">Explore placements, wins, and participation across four categories.</p></div></div><div class="filters" role="group" aria-label="Competition category"><button class="btn" data-category="All" aria-pressed="true">All</button><button class="btn" data-category="Institutional" aria-pressed="false">Institutional</button><button class="btn" data-category="Local" aria-pressed="false">Local</button><button class="btn" data-category="National" aria-pressed="false">National</button><button class="btn" data-category="International" aria-pressed="false">International</button></div><p id="categorySummary" class="muted" aria-live="polite"></p><div class="achievement-grid" id="competitionCards"></div></section><section id="journey"><div class="section-head"><div><h2>My journey</h2><p class="sub"></p></div></div><div class="timeline"><div class="year"><strong>2019</strong><p>My competition journey begins.</p></div><div class="year"><strong>2019–2026</strong><p>Seven years of competitions, experiences, and learning.</p></div><div class="year"><strong>2026</strong><p>140+ competitions and my first personal website.</p></div><div class="year"><strong>Looking ahead</strong><p>National stages, new challenges, and studying abroad.</p></div></div></section><section id="dreams"><div class="section-head"><div><h2>My Dreams</h2><p class="sub"></p></div></div><div class="panel"><p class="dream">My dream is to have a wonderful life, participate in all the national Olympiads, represent myself on the national stage, build a successful future, and study abroad.</p></div></section><section id="languages"><div class="section-head"><div><h2>Languages I am learning</h2><p class="sub"></p></div></div><div class="language-grid"><div class="stat"><h3>Spanish</h3><strong>A2</strong></div><div class="stat"><h3>Italian</h3><strong>A1</strong></div><div class="stat"><h3>German</h3><strong>A1</strong></div><div class="stat"><h3>French</h3><strong>Learning</strong></div><div class="stat"><h3>Portuguese</h3><strong>A1</strong></div></div></section><section id="gallery"><div class="section-head"><div><h2>Prizes, certificates & memories</h2><p class="sub">A space for photos of my awards and the moments behind them.</p></div></div><div class="photo-grid" id="photoGallery"></div></section><section id="cv"><div class="section-head"><div><h2>My profile</h2><p class="sub"></p></div></div><div class="panel cv-box"><div><h3>Abu Jabid Sarder</h3><p>18 years old · Bangladesh<br>Competition journey since 2019 · 140+ competitions</p></div><button class="btn primary" onclick="window.print()">Print / Save as PDF</button></div></section><section id="comments"><div class="section-head"><div><h2>Leave your thoughts</h2><p class="sub"></p></div></div><div class="panel"><p>Thank you for exploring my journey. Leave an encouraging message, a question, or your thoughts—I’d love to reply.</p><div id="commentsMount"><form id="commentForm"><label for="commentName">Your name</label><input id="commentName" name="name" maxlength="80" required autocomplete="name"><label for="commentMessage">Your comment</label><textarea id="commentMessage" name="message" maxlength="2000" rows="4" required></textarea><button class="btn primary" type="submit">Post comment</button><p id="commentStatus" class="muted" role="status"></p></form><p class="muted">Comments are saved on this browser and device. They are not shared with other visitors.</p><div id="commentList" aria-live="polite"></div></div></div></section></main><footer><div class="container footer-inner"><span>© <span id="currentYear"></span> Abu Jabid Sarder</span><a href="#home">Back to top ↑</a></div></footer><script>
+// Put yo<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Abu Jabid Sarder’s competition achievements, dreams and journey since 2019."><title>Abu Jabid Sarder | My Journey</title><style>
+
+    :root {
+
+      --bg: #07111f; --panel: #0c1b2d; --panel2: #10243a; --line: #1d3550;
+
+      --text: #edf5ff; --muted: #a8bbd0; --blue: #4da3ff; --blue2: #1976e8;
+
+      --gold: #f3c969; --radius: 18px; --shadow: 0 18px 50px #0003;
+
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body { margin: 0; background: radial-gradient(ellipse at 80% 0%, #142c49 0, var(--bg) 48%); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, sans-serif; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select { font: inherit; }
+
+    .container { width: min(1160px, calc(100% - 32px)); margin: auto; }
+
+    header { position: sticky; top: 0; z-index: 20; background: #07111feF; border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; }
+
+    .brand { font-weight: 850; letter-spacing: -.03em; font-size: 1.2rem; }
+
+    .brand span { color: var(--blue); }
+
+    .navlinks { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: .92rem; }
+
+    .navlinks a:hover { color: white; }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: stretch; padding: 56px 0 30px; }
+
+    .hero-copy, .hero-art, .panel { border: 1px solid var(--line); background: linear-gradient(145deg, #0d2035, #091726); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    .hero-copy { padding: clamp(25px, 5vw, 54px); }
+
+    .eyebrow { color: var(--blue); font-weight: 750; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
+
+    h1 { font-size: clamp(2.7rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -.06em; margin: 14px 0; }
+
+    h1 span { color: var(--blue); }
+
+    .lead { max-width: 620px; color: var(--muted); font-size: 1.1rem; }
+
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+
+    .btn { border: 1px solid var(--line); border-radius: 11px; padding: 11px 17px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--panel2); color: var(--text); cursor: pointer; }
+
+    .btn.primary { background: linear-gradient(120deg, var(--blue2), var(--blue)); color: #04101e; border-color: transparent; font-weight: 800; }
+
+    .hero-art { display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; padding: 26px; background: radial-gradient(circle at 70% 25%, #1f5484, transparent 37%), linear-gradient(145deg, #102d49, #07111f); overflow: hidden; }
+
+    .monogram { font-size: clamp(5rem, 12vw, 9rem); font-weight: 900; line-height: 1; letter-spacing: -.1em; color: #d6eaff; text-shadow: 0 12px 45px #4da3ff33; align-self: center; margin: 22px 0; }
+
+    .art-caption { color: #c5d9ed; font-size: .95rem; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 0 0 34px; }
+
+    .stat { background: #0b1a2a; border: 1px solid var(--line); padding: 20px; border-radius: 15px; }
+
+    .stat strong { display: block; font-size: 1.8rem; color: var(--blue); line-height: 1.2; }
+
+    .stat small { color: var(--muted); }
+
+    section { padding: 26px 0; scroll-margin-top: 88px; }
+
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
+
+    h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -.04em; }
+
+    .sub { color: var(--muted); margin: 4px 0 0; }
+
+    .panel { padding: 24px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+
+    .muted { color: var(--muted); }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .pill { background: #142c45; border: 1px solid #234260; color: #c7e2ff; padding: 5px 10px; border-radius: 999px; font-size: .85rem; }
+
+    .achievement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+
+    .achievement { border: 1px solid var(--line); border-radius: 15px; background: #0b1a2a; padding: 19px; min-height: 180px; display: flex; flex-direction: column; gap: 9px; }
+
+    .achievement .icon { font-size: 1.7rem; }
+
+    .achievement h3 { margin: 0; font-size: 1.05rem; }
+
+    .achievement p { margin: 0; color: var(--muted); font-size: .93rem; }
+
+    .tag { color: var(--gold); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+
+    .toolbar input, .toolbar select { background: #081626; color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+
+    .toolbar input { flex: 1; min-width: 180px; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+
+    table { width: 100%; border-collapse: collapse; min-width: 650px; }
+
+    th, td { padding: 13px 15px; text-align: left; border-bottom: 1px solid var(--line); }
+
+    th { color: #c8ddf2; background: #10243a; font-size: .86rem; }
+
+    td { color: var(--muted); }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+    .year { padding: 17px; border-left: 3px solid var(--blue); background: #0b1a2a; border-radius: 0 12px 12px 0; }
+
+    .year strong { font-size: 1.3rem; color: var(--blue); }
+
+    .year p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
+
+    .gallery-note { border: 1px dashed #355675; border-radius: 14px; padding: 28px; text-align: center; color: var(--muted); }
+
+    .cv-box { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0; color: var(--muted); font-size: .9rem; }
+
+    .footer-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    @media (max-width: 850px) {
+
+      .hero { grid-template-columns: 1fr; padding-top: 28px; }
+
+      .hero-art { min-height: 230px; }
+
+      .stats { grid-template-columns: repeat(2, 1fr); }
+
+      .achievement-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .timeline { grid-template-columns: repeat(2, 1fr); }
+
+      .about-grid { grid-template-columns: 1fr; }
+
+      nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+
+      .navlinks { gap: 12px; }
+
+    }
+
+    @media (max-width: 520px) {
+
+      .achievement-grid, .timeline { grid-template-columns: 1fr; }
+
+      .stats { gap: 9px; }
+
+      .stat { padding: 14px; }
+
+      .stat strong { font-size: 1.45rem; }
+
+      .panel { padding: 17px; }
+
+    }
+
+    @media print {
+
+      header, .actions, .toolbar, #gallery, footer, .btn { display: none !important; }
+
+      body { background: white; color: #111; }
+
+      .hero-copy, .hero-art, .panel, .stat, .achievement, .year { background: white; color: #111; box-shadow: none; border-color: #ccc; }
+
+      .muted, .lead, .sub, td, .achievement p, .year p { color: #333; }
+
+      .hero { padding-top: 0; }
+
+    }
+
+  
+.school{color:#78dcca;font-weight:650}.position{color:#f3c969;font-weight:800;font-size:1.15rem}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.filters button[aria-pressed="true"]{background:#4da3ff;color:#07111f}.achievement small{color:var(--muted)}.dream{font-size:1.2rem;max-width:850px}.language-grid,.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}.photo-slot{min-height:200px;display:grid;place-content:center;text-align:center;border:1px dashed #355675;border-radius:15px;color:var(--muted);padding:20px}.photo-slot img{width:100%;border-radius:12px}.utterances{max-width:100%}.btn:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:4px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.filters,#comments{display:none!important}.achievement-grid{grid-template-columns:repeat(2,1fr)}.achievement,.panel{break-inside:avoid}.school{color:#126354}.position{color:#805600}}
+#commentForm{display:grid;gap:10px;max-width:720px}#commentForm input,#commentForm textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#081626;color:var(--text);font:inherit}#commentForm textarea{resize:vertical}#commentForm button{justify-self:start}#commentList article{margin-top:16px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}#commentList p{white-space:pre-wrap;overflow-wrap:anywhere}#commentList time{display:block;color:var(--muted);font-size:.85rem}#commentForm textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.prize-photo-area{min-height:520px;padding:22px;gap:16px}.prize-photo-frame{position:relative;flex:1;min-height:400px;border:1px dashed #4b7295;border-radius:14px;overflow:hidden;background:#07111f80;display:grid;place-items:center}.prize-photo-frame img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}.prize-photo-frame img[hidden]{display:none}#prizePhotoPlaceholder{text-align:center;padding:30px;color:var(--muted)}#prizePhotoPlaceholder span{font-size:4rem}#prizePhotoPlaceholder h2{color:var(--text);font-size:1.5rem}#prizePhotoPlaceholder p{max-width:260px;margin:12px auto}@media(max-width:850px){.prize-photo-area{min-height:460px}.prize-photo-frame{min-height:350px}}@media(max-width:520px){.prize-photo-area{min-height:410px}.prize-photo-frame{min-height:300px}}</style></head><body><header><nav class="container"><a class="brand" href="#home">JS <span>·</span> Abu Jabid Sarder</a><div class="navlinks"><a href="#about">About</a><a href="#achievements">Competitions</a><a href="#journey">Journey</a><a href="#dreams">My Dreams</a><a href="#languages">Languages</a><a href="#gallery">Gallery</a><a href="#comments">Comments</a></div></nav></header><main class="container"><section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">Student · Competitor · Lifelong learner</div><h1>Abu Jabid <span>Sarder</span></h1><p class="lead">Seven years of curiosity, competition, and growth. Welcome to my very first website—a place to share my achievements, experiences, and the journey ahead.</p><div class="actions"><a class="btn primary" href="#achievements">Explore my competitions ↓</a><button class="btn" onclick="window.print()">Print / Save as PDF</button></div></div><div class="hero-art prize-photo-area"><div class="eyebrow">My proudest moments</div><div class="prize-photo-frame"><img id="prizePhoto" alt="Abu Jabid Sarder holding his prize" hidden><div id="prizePhotoPlaceholder"><span aria-hidden="true">🏆</span><h2>My prize-winning moment</h2><p>My photo holding a prize will appear here.</p></div></div><p class="art-caption">Keep learning. Keep competing. Keep growing.</p></div></section><div class="stats"><div class="stat"><strong>140+</strong>Competitions participated in</div><div class="stat"><strong>7 years</strong>Competing since 2019 · as of 2026</div><div class="stat"><strong>21</strong>Local Olympiad wins</div><div class="stat"><strong>4</strong>Competition categories</div></div><section id="about"><div class="section-head"><div><h2>About me</h2><p class="sub"></p></div></div><div class="panel"><p>I am Abu Jabid Sarder. I am 18 years old and I am from Bangladesh. This is my very first website, where I share the competitions I have participated in, my wins, my experiences, and the journey of my life.</p></div></section><section id="achievements"><div class="section-head"><div><h2>My competition showcase</h2><p class="sub">Explore placements, wins, and participation across four categories.</p></div></div><div class="filters" role="group" aria-label="Competition category"><button class="btn" data-category="All" aria-pressed="true">All</button><button class="btn" data-category="Institutional" aria-pressed="false">Institutional</button><button class="btn" data-category="Local" aria-pressed="false">Local</button><button class="btn" data-category="National" aria-pressed="false">National</button><button class="btn" data-category="International" aria-pressed="false">International</button></div><p id="categorySummary" class="muted" aria-live="polite"></p><div class="achievement-grid" id="competitionCards"></div></section><section id="journey"><div class="section-head"><div><h2>My journey</h2><p class="sub"></p></div></div><div class="timeline"><div class="year"><strong>2019</strong><p>My competition journey begins.</p></div><div class="year"><strong>2019–2026</strong><p>Seven years of competitions, experiences, and learning.</p></div><div class="year"><strong>2026</strong><p>140+ competitions and my first personal website.</p></div><div class="year"><strong>Looking ahead</strong><p>National stages, new challenges, and studying abroad.</p></div></div></section><section id="dreams"><div class="section-head"><div><h2>My Dreams</h2><p class="sub"></p></div></div><div class="panel"><p class="dream">My dream is to have a wonderful life, participate in all the national Olympiads, represent myself on the national stage, build a successful future, and study abroad.</p></div></section><section id="languages"><div class="section-head"><div><h2>Languages I am learning</h2><p class="sub"></p></div></div><div class="language-grid"><div class="stat"><h3>Spanish</h3><strong>A2</strong></div><div class="stat"><h3>Italian</h3><strong>A1</strong></div><div class="stat"><h3>German</h3><strong>A1</strong></div><div class="stat"><h3>French</h3><strong>Learning</strong></div><div class="stat"><h3>Portuguese</h3><strong>A1</strong></div></div></section><section id="gallery"><div class="section-head"><div><h2>Prizes, certificates & memories</h2><p class="sub">A space for photos of my awards and the moments behind them.</p></div></div><div class="photo-grid" id="photoGallery"></div></section><section id="cv"><div class="section-head"><div><h2>My profile</h2><p class="sub"></p></div></div><div class="panel cv-box"><div><h3>Abu Jabid Sarder</h3><p>18 years old · Bangladesh<br>Competition journey since 2019 · 140+ competitions</p></div><button class="btn primary" onclick="window.print()">Print / Save as PDF</button></div></section><section id="comments"><div class="section-head"><div><h2>Leave your thoughts</h2><p class="sub"></p></div></div><div class="panel"><p>Thank you for exploring my journey. Leave an encouraging message, a question, or your thoughts—I’d love to reply.</p><div id="commentsMount"><form id="commentForm"><label for="commentName">Your name</label><input id="commentName" name="name" maxlength="80" required autocomplete="name"><label for="commentMessage">Your comment</label><textarea id="commentMessage" name="message" maxlength="2000" rows="4" required></textarea><button class="btn primary" type="submit">Post comment</button><p id="commentStatus" class="muted" role="status"></p></form><p class="muted">Comments are saved on this browser and device. They are not shared with other visitors.</p><div id="commentList" aria-live="polite"></div></div></div></section></main><footer><div class="container footer-inner"><span>© <span id="currentYear"></span> Abu Jabid Sarder</span><a href="#home">Back to top ↑</a></div></footer><script>
+// Put your prize photo in the images folder and set this path, for example:
+// const PRIZE_PHOTO_URL = "images/me-holding-prize.jpg";
+const PRIZE_PHOTO_URL = "";
+const prizePhoto=document.getElementById('prizePhoto');
+if(PRIZE_PHOTO_URL){prizePhoto.addEventListener('load',()=>{prizePhoto.hidden=false;document.getElementById('prizePhotoPlaceholder').hidden=true;});prizePhoto.addEventListener('error',()=>{prizePhoto.hidden=true;document.getElementById('prizePhotoPlaceholder').hidden=false;});prizePhoto.src=PRIZE_PHOTO_URL;}
+const competitions = [{"category": "Institutional", "name": "National Science Carnival", "result": "2nd", "school": "St. Gregory’s High School and College", "year": null}, {"category": "Institutional", "name": "Physics Olympiad", "result": "1st", "school": "Dhaka City College", "year": null}, {"category": "Institutional", "name": "Physics Olympiad", "result": "2nd", "school": "Dhaka College", "year": null}, {"category": "Institutional", "name": "Notre Dame National IT Fest — ICT Olympiad", "result": "12th", "school": "Notre Dame College", "year": null}, {"category": "Institutional", "name": "Alohal Mathematic Junior Certificate", "result": "B+", "school": "", "year": 2019}, {"category": "Institutional", "name": "Science Fair — Pop Quiz", "result": "3rd place", "school": "Mastermind English Medium School", "year": 2022}, {"category": "Institutional", "name": "Maths x IT Fest — NFS Racing", "result": "2nd place", "school": "Mastermind English Medium School", "year": 2023}, {"category": "Local", "name": "General Knowledge Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "Local", "name": "Mathematics Olympiad", "result": "7 wins", "school": "", "year": null}, {"category": "Local", "name": "Biology Olympiad", "result": "3 wins", "school": "", "year": null}, {"category": "Local", "name": "Chemistry Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "Local", "name": "Physics Olympiad", "result": "4 wins", "school": "", "year": null}, {"category": "Local", "name": "IQ Olympiad", "result": "1 wins", "school": "", "year": null}, {"category": "Local", "name": "IT Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Mathematics", "result": "Finalist", "school": "", "year": 2025}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Mathematics", "result": "Finalist", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Chemistry", "result": "Finalist", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Olympiad of Astronomy and Astrophysics (BDOAA) — E-regional", "result": "Winner", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Mathematical Olympiad (BDMO) — Regional round", "result": "Participant", "school": "", "year": 2026}, {"category": "National", "name": "Banglar Math Excellency Championship (BMEC) — National round", "result": "Participant", "school": "", "year": 2026}, {"category": "National", "name": "Banglar Math Team Championship (BMTC) — National round", "result": "Participant", "school": "", "year": 2026}, {"category": "International", "name": "International Youth Mathematic Challenge (IYMC)", "result": "Pre-finalist", "school": "", "year": 2026}, {"category": "International", "name": "Queen’s Commonwealth Essay Writing Competition", "result": "Participant", "school": "", "year": 2026}];
+// Set your public GitHub repository to enable shared comments, e.g. "jabid/jabid.github.io".
+const COMMENTS_REPO = "";
+// Upload images to images/, then add entries here: {src:"images/award.jpg",alt:"Me holding my award",caption:"Award ceremony"}
+const galleryPhotos = [];
+const esc = value => String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let category='All';
+function render(){const items=competitions.filter(c=>category==='All'||c.category===category);document.getElementById('competitionCards').innerHTML=items.map(c=>`<article class="achievement"><div class="tag">${esc(c.category)}${c.year?' · '+c.year:''}</div><h3>${esc(c.name)}</h3>${c.school?`<p class="school">${esc(c.school)}</p>`:''}<div class="position">${esc(c.result)}</div></article>`).join('');document.getElementById('categorySummary').textContent=category==='Local'?'21 wins across 7 local Olympiad subjects.':category==='All'?'Highlights from my 140+ competitions. Local entries summarize multiple wins.':category+' competition highlights';}
+document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.category;document.querySelectorAll('[data-category]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();}));
+const gallery=document.getElementById('photoGallery');
+if(galleryPhotos.length){gallery.innerHTML=galleryPhotos.map(p=>`<figure class="photo-slot"><img loading="lazy" src="${esc(p.src)}" alt="${esc(p.alt)}"><figcaption>${esc(p.caption)}</figcaption></figure>`).join('');}else{gallery.innerHTML=['Award moments','My certificates','Competition memories'].map(t=>`<div class="photo-slot"><span aria-hidden="true">📸</span><h3>${t}</h3><p>Photos coming soon</p></div>`).join('');}
+const commentKey='jabid-journey-comments-v1';
+let savedComments=[];
+try{const stored=JSON.parse(localStorage.getItem(commentKey)||'[]');if(Array.isArray(stored))savedComments=stored.filter(c=>c&&typeof c.name==='string'&&typeof c.message==='string'&&typeof c.date==='string');}catch(e){}
+function renderComments(){const list=document.getElementById('commentList');if(!list)return;list.replaceChildren();if(!savedComments.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='No comments yet. Write the first one!';list.append(empty);return;}savedComments.forEach(c=>{const article=document.createElement('article');const name=document.createElement('strong');name.textContent=c.name;const time=document.createElement('time');time.dateTime=c.date;time.textContent=new Date(c.date).toLocaleString();const message=document.createElement('p');message.textContent=c.message;article.append(name,time,message);list.append(article);});}
+if(!COMMENTS_REPO){renderComments();document.getElementById('commentForm').addEventListener('submit',event=>{event.preventDefault();const name=document.getElementById('commentName').value.trim();const message=document.getElementById('commentMessage').value.trim();const status=document.getElementById('commentStatus');if(!name||!message){status.textContent='Please enter your name and a comment.';return;}const next=[{name,message,date:new Date().toISOString()},...savedComments];try{localStorage.setItem(commentKey,JSON.stringify(next));savedComments=next;renderComments();event.target.reset();status.textContent='Your comment has been saved in this browser.';}catch(e){status.textContent='Your browser could not save this comment. Please enable browser storage and try again.';}});}
+if(COMMENTS_REPO){const mount=document.getElementById('commentsMount');mount.textContent='';const hint=document.createElement('p');hint.className='muted';hint.textContent='Sign in with GitHub to leave a public comment. I can respond in the same conversation.';mount.append(hint);const script=document.createElement('script');script.src='https://utteranc.es/client.js';script.setAttribute('repo',COMMENTS_REPO);script.setAttribute('issue-term','pathname');script.setAttribute('theme','github-dark');script.crossOrigin='anonymous';script.async=true;mount.append(script);}
+let previousCategory;window.addEventListener('beforeprint',()=>{previousCategory=category;category='All';render();});window.addEventListener('afterprint',()=>{category=previousCategory||'All';render();});
+document.getElementById('currentYear').textContent=new Date().getFullYear();render();
+</script></body></html>ur prize photo in the images folder and set this path, for example:
+// const PRIZE_PHOTO_URL = https://github.com/JabidSarderEmperor/Jabid-Sarder-s-CV/blob/a686f2f4cd7792ff34b8424a41dc51e32013ff22/ggs%20habid.jpg
+const PRIZE_PHOTO_URL = "";
+const prizePhoto=document.getElementById('prizePhoto');
+if(PRIZE_PHOTO_URL){prizePhoto.addEventListener('load',()=>{prizePhoto.hidden=false;document.getElementById('prizePhotoPlaceholder').hidden=true;});prizePhoto.addEventListener('error',()=>{prizePhoto.hidden=true;document.getElementById('prizePhotoPlaceholder').hidden=false;});prizePhoto.src=PRIZE_PHOTO_URL;}
 const competitions = [{"category": "Institutional", "name": "National Science Carnival", "result": "2nd", "school": "St. Gregory’s High School and College", "year": null}, {"category": "Institutional", "name": "Physics Olympiad", "result": "1st", "school": "Dhaka City College", "year": null}, {"category": "Institutional", "name": "Physics Olympiad", "result": "2nd", "school": "Dhaka College", "year": null}, {"category": "Institutional", "name": "Notre Dame National IT Fest — ICT Olympiad", "result": "12th", "school": "Notre Dame College", "year": null}, {"category": "Institutional", "name": "Alohal Mathematic Junior Certificate", "result": "B+", "school": "", "year": 2019}, {"category": "Institutional", "name": "Science Fair — Pop Quiz", "result": "3rd place", "school": "Mastermind English Medium School", "year": 2022}, {"category": "Institutional", "name": "Maths x IT Fest — NFS Racing", "result": "2nd place", "school": "Mastermind English Medium School", "year": 2023}, {"category": "Local", "name": "General Knowledge Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "Local", "name": "Mathematics Olympiad", "result": "7 wins", "school": "", "year": null}, {"category": "Local", "name": "Biology Olympiad", "result": "3 wins", "school": "", "year": null}, {"category": "Local", "name": "Chemistry Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "Local", "name": "Physics Olympiad", "result": "4 wins", "school": "", "year": null}, {"category": "Local", "name": "IQ Olympiad", "result": "1 wins", "school": "", "year": null}, {"category": "Local", "name": "IT Olympiad", "result": "2 wins", "school": "", "year": null}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Mathematics", "result": "Finalist", "school": "", "year": 2025}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Mathematics", "result": "Finalist", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Olympiad Challenge (BDOC) — Chemistry", "result": "Finalist", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Olympiad of Astronomy and Astrophysics (BDOAA) — E-regional", "result": "Winner", "school": "", "year": 2026}, {"category": "National", "name": "Bangladesh Mathematical Olympiad (BDMO) — Regional round", "result": "Participant", "school": "", "year": 2026}, {"category": "National", "name": "Banglar Math Excellency Championship (BMEC) — National round", "result": "Participant", "school": "", "year": 2026}, {"category": "National", "name": "Banglar Math Team Championship (BMTC) — National round", "result": "Participant", "school": "", "year": 2026}, {"category": "International", "name": "International Youth Mathematic Challenge (IYMC)", "result": "Pre-finalist", "school": "", "year": 2026}, {"category": "International", "name": "Queen’s Commonwealth Essay Writing Competition", "result": "Participant", "school": "", "year": 2026}];
 // Set your public GitHub repository to enable shared comments, e.g. "jabid/jabid.github.io".
 const COMMENTS_REPO = "";
